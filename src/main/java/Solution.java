@@ -32,23 +32,45 @@ public class Solution {
 //        return nums;
 //    }
 
+//    3) Given an array of integers nums, calculate the pivot index of this array.
+//
+//The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right.
+//
+//If the index is on the left edge of the array, then the left sum is 0 because there are no elements to the left. This also applies to the right edge of the array.
+//
+//Return the leftmost pivot index. If no such index exists, return -1.
+
+//    int total = 0;
+//        for(int i = 0; i < nums.length; i++){
+//        total += nums[i];
+//    }
+//
+//    int left = 0;
+//        for(int i = 0; i < nums.length; i++){
+//        if(i != 0) left += nums[i-1];
+//        if(total - left - nums[i] == left){
+//            return i;
+//        }
+//    }
+//        return -1;
+
+
+
     public static void main(String[] args) {
 
-//        int[] nums = {1,7,3,6,5,6};
-//        int pivot = 0;
-//        int left = nums[0];
-//        int right = nums[nums.length - 1];
-//        int dec = 1;
-//        for(int i = 1; i < nums.length; i++){
-//            if(left < right){
-//                left += nums[i];
-//            }else if(right < left){
-//                right += nums[nums.length - dec];
-//                dec++;
-//            } else if(left == right){
-//                pivot = nums[i-1];
-//            }
-//        }
-//        return pivot;
+        String s = "egg";
+        String t = "add";
+
+        if(s.length() != t.length(){
+//            return false;
+        }
+
+
+       char[] sArray = s.toCharArray();
+        char[] tArray = t.toCharArray();
+        for(char i: sArray){
+
+        }
+
     }
 }
