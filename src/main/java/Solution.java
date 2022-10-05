@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.List;
 
 public class Solution {
@@ -54,23 +55,62 @@ public class Solution {
 //    }
 //        return -1;
 
+//    4) Given two strings s and t, determine if they are isomorphic.
+//Two strings s and t are isomorphic if the characters in s can be replaced to get t.
+//All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself
+
+//    String s = "egg";
+//    String t = "add";
+//
+//        if(s.length() != t.length()){
+//        return false;
+//    }
+//
+//    HashMap<Character, Character> sMap = new HashMap<>();
+//    HashMap<Character, Character> tMap = new HashMap<>();
+//
+//        for(int i = 0; i < s.length(); i++){
+//        char s1 = s.charAt(i);
+//        char t1 = t.charAt(i);
+//
+//      Makes sure the keys and values are both repeating, checks the pattern
+//        if(sMap.containsKey(s1)){
+//            if(t1 != sMap.get(s1)){
+//                return false;
+//            }
+//        }else{
+//      if the first map isnt repeating and the second one is then its false
+//            if(tMap.containsKey(t1)){
+//                return false;
+//            }
+//            sMap.put(s1,t1);
+//            tMap.put(t1,s1);
+//        }
+//    }
+//        return true;
+//}
+
+//    5) Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+//
+//A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not)
+
+//    String s = "abc";
+//    String t = "ahbgdc";
+//
+//    int count = 0;
+//         for( int i = 0; i < t.length() && count < s.length(); i++){
+//        if(s.charAt(count) == t.charAt(i)){
+//            count++;
+//        }
+//    }
+//         if(count == s.length()){
+//        return true;
+//    }
+//         return false;
 
 
     public static void main(String[] args) {
 
-        String s = "egg";
-        String t = "add";
-
-        if(s.length() != t.length(){
-//            return false;
-        }
-
-
-       char[] sArray = s.toCharArray();
-        char[] tArray = t.toCharArray();
-        for(char i: sArray){
-
-        }
 
     }
 }
