@@ -217,7 +217,46 @@ public class Solution {
 //        return start;
 //    }
 
+//    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!DATA STRUCTURE EXERCISES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//    1) Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+//    first solution/ higher complexity because it has to loop twice
+//        for(int i = 0; i < nums.length; i++){
+//            for(int j = i + 1; j < nums.length; j++){
+//                if(nums[i] == nums[j]){
+//                    return false;
+//                }
+//            }
+//        }
+//        return true;
+
+//        second solution/ only had to loop once, make sure to sort array first
+//        Arrays.sort(nums);
+//        for(int i = 1; i < nums.length; i++){
+//            if(nums[i] == nums[i-1]){
+//                return true;
+//            }
+//        }
+//        return false;
+
+//    2) Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+//
+//A subarray is a contiguous part of an array.
+
+    //        !!!!!!!!!!!Kadane's Algorithm!!!!!!!!!!
+//        int max_sum = nums[0];
+//        int current_sum = max_sum;
+    //(set the max and current to the first index)
+//        for(int i = 1; i < nums.length; i++){
+//            current_sum = Math.max(nums[i] + current_sum, nums[i]);
+//            max_sum = Math.max(current_sum, max_sum);
+    //(we use math.max to set the variables to the larger of the 2 values, first for current we decide if the current index plus the previous sum is larger than the current index and if it is we keep it/and after we set the current sum we check to see if it is larger than our current max sum and at the end the largest sum found is returned)
+//        }
+//        return max_sum;
+
     public static void main(String[] args) {
+
 
 
     }
