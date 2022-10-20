@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -254,6 +255,57 @@ public class Solution {
     //(we use math.max to set the variables to the larger of the 2 values, first for current we decide if the current index plus the previous sum is larger than the current index and if it is we keep it/and after we set the current sum we check to see if it is larger than our current max sum and at the end the largest sum found is returned)
 //        }
 //        return max_sum;
+
+//    3) Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+//
+//You may assume that each input would have exactly one solution, and you may not use the same element twice.
+//
+//You can return the answer in any order.
+
+    // time complexity n^2/ could be better
+//        for (int i = 0; i < nums.length; i++) {
+//            for (int j = i + 1; nums.length; j++) {
+//                int complement = target - nums[i];
+//
+//                if (nums[j] == complement) {
+//                    return new int[] {i,j};
+//                }
+//            }
+//        }
+//        throw new IllegalArgumentException("no match found");
+
+    // time complexity n^0
+
+//    Map<Integer, Integer> num_map = new HashMap<>();
+//
+//    for(int i=0; i<nums.length; i++){
+//        int complement = target - nums[i];
+//
+//        if(num_map.containsKey(complement)){
+//            return new int[] {num_map.get(complement), i};
+//        }
+//        num_map.put(nums[i], i);
+//    }
+//    throw new IllegalArgumentException("no match found");
+
+//    4) You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+//
+//Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+//
+//The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
+
+//    int p1 = m-1, p2 = n-1, i = m+n-1;
+//        while(p2 >= 0){
+//            if(p1 >= 0 && nums1[p1] > nums2[p2]){
+//                nums1[i] = nums1[p1];
+//                i--;
+//                p1--;
+//            }else{
+//                nums1[i] = nums2[p2];
+//                i--;
+//                p2--;
+//            }
+//        }
 
     public static void main(String[] args) {
 
