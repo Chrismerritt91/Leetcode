@@ -307,7 +307,109 @@ public class Solution {
 //            }
 //        }
 
+//    5) Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must appear as many times as it shows in both arrays and you may return the result in any order.
+
+//     int length1 = nums1.length;
+//       int length2 = nums2.length;
+//       int i=0, j=0, k=0;
+//        Arrays.sort(nums1);
+//        Arrays.sort(nums2);
+//
+//       while(i < length1 && j < length2){
+//           if(nums1[i] < nums2[j]){
+//               i++;
+//           }else if(nums1[i] > nums2[j]){
+//               j++;
+//           }else{
+//               nums1[k++] = nums1[i++];
+//               j++;
+//           }
+//        }
+//       return Arrays.copyOfRange(nums1,0,k);
+
+//    ***********/Use variables to represent length and index to limit number of loops/******************
+
+//    6) You are given an array prices where prices[i] is the price of a given stock on the ith day.
+//
+//You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+//
+//Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+//    int  min_val = Integer.MAX_VALUE;
+//    int max_profit = 0;
+//
+//        for(int i = 0; i<prices.length; i++){
+//        if(prices[i] < min_val){
+//            min_val = prices[i];
+//        }else if(prices[i] - min_val > max_profit){
+//            max_profit = prices[i] - min_val;
+//        }
+//    }
+//        return max_profit;
+
+//    7) In MATLAB, there is a handy function called reshape which can reshape an m x n matrix into a new one with a different size r x c keeping its original data.
+//
+//You are given an m x n matrix mat and two integers r and c representing the number of rows and the number of columns of the wanted reshaped matrix.
+//
+//The reshaped matrix should be filled with all the elements of the original matrix in the same row-traversing order as they were.
+//
+//If the reshape operation with given parameters is possible and legal, output the new reshaped matrix; Otherwise, output the original matrix.
+
+//    int[][] matrixReshape(int[][] mat, int r, int c)
+//
+//    int rows = mat.length;
+//    int columns = mat[0].length;
+//
+//        if((rows*columns) != (r*c)) return mat;
+//
+//    int[][] outputArray = new int[r][c];
+//    int rowNum = 0;
+//    int columnNum = 0;
+//
+//        for(int i = 0; i<rows; i++){
+//        for(int j = 0; j<columns; j++){
+//            outputArray[rowNum][columnNum] = mat[i][j];
+//            columnNum++;
+//            if(columnNum == c){
+//                columnNum = 0;
+//                rowNum++;
+//            }
+//        }
+//    }
+//        return outputArray;
+
+//    8) Given an integer numRows, return the first numRows of Pascal's triangle.
+//
+//In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
+
+//    public List<List<Integer>> generate(int numRows) {
+//        List<List<Integer>> triangle = new ArrayList<>();
+//
+//        if (numRows == 0) return triangle;
+//
+//        List<Integer> firstRow = new ArrayList<>();
+//        firstRow.add(1);
+//        triangle.add(firstRow);
+//
+//        for (int i = 1; i < numRows; i++) {
+//            List<Integer> prevRow = triangle.get(i - 1);
+//            List<Integer> currentRow = new ArrayList<>();
+//            currentRow.add(1);
+//
+//            for (int j = 1; j < i; j++) {
+//                currentRow.add(prevRow.get(j - 1) + prevRow.get(j));
+//            }
+//
+//            currentRow.add(1);
+//            triangle.add(currentRow);
+//        }
+//        return triangle;
+//    }
+
     public static void main(String[] args) {
+
+//        int[] nums1 = {4,9,5};
+//        int[] prices = {7,1,5,3,6,4};
 
 
 
