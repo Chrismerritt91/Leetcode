@@ -8,14 +8,32 @@ public class HackerRank {
     public static void main(String[] args) {
 //        hackerrank assessment questions
 //
-        List<Integer> arr = new ArrayList<>();
-        arr.add(1);
-        arr.add(1);
-        arr.add(2);
-        arr.add(3);
-        arr.add(3);
-        arr.add(4);
-        arr.add(4);
+//        List<Integer> arr = new ArrayList<>();
+//        arr.add(1);
+//        arr.add(1);
+//        arr.add(2);
+//        arr.add(3);
+//        arr.add(3);
+//        arr.add(4);
+//        arr.add(4);
+
+//        2d array
+        int vertexCount = 3;
+        List<List<Integer>> arr = new ArrayList<>(vertexCount);
+
+        for(int i=0; i < vertexCount; i++) {
+            arr.add(new ArrayList());
+        }
+
+        arr.get(0).add(1);
+        arr.get(0).add(2);
+        arr.get(0).add(3);
+        arr.get(1).add(4);
+        arr.get(1).add(5);
+        arr.get(1).add(6);
+        arr.get(2).add(9);
+        arr.get(2).add(8);
+        arr.get(2).add(9);
 
 
 //        1)
@@ -98,6 +116,33 @@ public class HackerRank {
 //             return a.get(i);
 //         }
 //        }
+
+//        6)
+
+        int primaryDiagonal = arr.get(0).get(0);
+        int secondaryDiagonal = arr.get(0).get(arr.get(0).size()-1);
+        int diagonalDifference = 0;
+
+//        for(int i = 1; i < arr.get(0).size()-1; i++){
+//            if(arr.get(i).get(i+1) != arr.get(i).get(arr.get(0).size()-1)){
+//                primaryDiagonal += arr.get(i).get(i+1);
+//            }else{
+//                primaryDiagonal += arr.get(i).get(arr.size()-1);
+//            }
+//
+//        }
+//        for(int i = 1; i < arr.get(0).size()-1; i++){
+//            if(arr.get(i).get(i-1) != arr.get(i).get(0)){
+//                secondaryDiagonal += arr.get(i).get(i-1);
+//            }else{
+//                secondaryDiagonal += arr.get(i).get(0);
+//            }
+
+//        }
+//        diagonalDifference = primaryDiagonal - secondaryDiagonal;
+
+        System.out.println(primaryDiagonal);
+        System.out.println(secondaryDiagonal);
 
         }
 
