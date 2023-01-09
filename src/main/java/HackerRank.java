@@ -7,15 +7,22 @@ public class HackerRank {
 
     public static void main(String[] args) {
 //        hackerrank assessment questions
+        int[] arr = new int[5];
+        arr[0] = 1;
+        arr[1] = 2;
+        arr[2] = 3;
+        arr[3] = 4;
+        arr[4] = 5;
+
 //
-        List<Integer> arr = new ArrayList<>();
-        arr.add(1);
-        arr.add(1);
-        arr.add(2);
-        arr.add(3);
-        arr.add(3);
-        arr.add(4);
-        arr.add(4);
+//        List<Integer> arr = new ArrayList<>();
+//        arr.add(1);
+//        arr.add(2);
+//        arr.add(3);
+//        arr.add(4);
+//        arr.add(5);
+//        arr.add(6);
+//        arr.add(7);
 
 //        *****  Setting up a 2d array  *****
 //        int vertexCount = 3;
@@ -136,10 +143,34 @@ public class HackerRank {
 //        System.out.println(diagonalDifference);
 //        ------------------------------------------------------------------------------------------------------
 //        7)
-
-
+        findZigZagSequence(arr, 5);
+//        System.out.println((7/2)-1);
 
         }
+
+    public static void findZigZagSequence(int [] a, int n){
+        Arrays.sort(a);
+        int mid = n/2;
+        int temp = a[mid];
+        a[mid] = a[n - 1];
+        a[n - 1] = temp;
+        System.out.println(temp);
+//
+//        int st = mid + 1;
+//        int ed = n - 1;
+//        while(st <= ed){
+//            temp = a[st];
+//            a[st] = a[ed];
+//            a[ed] = temp;
+//            st = st + 1;
+//            ed = ed - 1;
+//        }
+//        for(int i = 0; i < n; i++){
+//            if(i > 0) System.out.print(" ");
+//            System.out.print(a[i]);
+//        }
+//        System.out.println();
+    }
 
     }
 
