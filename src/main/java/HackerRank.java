@@ -143,18 +143,18 @@ public class HackerRank {
 //        System.out.println(diagonalDifference);
 //        ------------------------------------------------------------------------------------------------------
 //        7)
-        findZigZagSequence(arr, 5);
-//        System.out.println((7/2)-1);
-
-        }
-
-    public static void findZigZagSequence(int [] a, int n){
-        Arrays.sort(a);
-        int mid = n/2;
-        int temp = a[mid];
-        a[mid] = a[n - 1];
-        a[n - 1] = temp;
-        System.out.println(temp);
+//        findZigZagSequence(arr, 5);
+////        System.out.println((7/2)-1);
+//
+//        }
+//
+//    public static void findZigZagSequence(int [] a, int n){
+//        Arrays.sort(a);
+//        int mid = n/2;
+//        int temp = a[mid];
+//        a[mid] = a[n - 1];
+//        a[n - 1] = temp;
+//        System.out.println(temp);
 //
 //        int st = mid + 1;
 //        int ed = n - 1;
@@ -170,6 +170,11 @@ public class HackerRank {
 //            System.out.print(a[i]);
 //        }
 //        System.out.println();
+
+//        8)
+
+
+
     }
 
     }
