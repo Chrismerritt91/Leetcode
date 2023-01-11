@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class HackerRank {
 
@@ -142,22 +139,17 @@ public class HackerRank {
 //
 //        System.out.println(diagonalDifference);
 //        ------------------------------------------------------------------------------------------------------
-//        7)
-//        findZigZagSequence(arr, 5);
-////        System.out.println((7/2)-1);
-//
-//        }
+//        7) Given an array of  distinct integers, transform the array into a zig zag sequence by permuting the array elements. A sequence will be called a zig zag sequence if the first  elements in the sequence are in increasing order and the last  elements are in decreasing order, where . You need to find the lexicographically smallest zig zag sequence of the given array.
 //
 //    public static void findZigZagSequence(int [] a, int n){
 //        Arrays.sort(a);
-//        int mid = n/2;
+//        int mid = (n + 1)/2 - 1;
 //        int temp = a[mid];
 //        a[mid] = a[n - 1];
 //        a[n - 1] = temp;
-//        System.out.println(temp);
 //
 //        int st = mid + 1;
-//        int ed = n - 1;
+//        int ed = n - 2;
 //        while(st <= ed){
 //            temp = a[st];
 //            a[st] = a[ed];
@@ -170,8 +162,66 @@ public class HackerRank {
 //            System.out.print(a[i]);
 //        }
 //        System.out.println();
+//    }
+//}
 
-//        8)
+//------------------------------------------------------------------------------------------
+
+//        *) When you need toe create multiple users with values you can use a hashmap and a loop to create
+//        int m = 2;
+//        int n = 2;
+//
+//        HashMap<Integer, Integer> towerBreak = new HashMap<Integer, Integer>();
+//
+//            for(int i = 1; i <= n; i++){
+//                towerBreak.put(i, m);
+//            }
+//       ---------------------------------------------------------------------
+//        9) Two players are playing a game of Tower Breakers! Player  always moves first, and both players always play optimally.The rules of the game are as follows:
+//
+//Initially there are  towers.
+//Each tower is of height .
+//The players move in alternating turns.
+//In each turn, a player can choose a tower of height  and reduce its height to , where  and  evenly divides .
+//If the current player is unable to make a move, they lose the game.
+//Given the values of  and , determine which player will win. If the first player wins, return . Otherwise, return .
+
+//        public static int towerBreakers(int n, int m) {
+//            // Write your code here
+//            if(m == 1 || n%2 == 0){
+//                return 2;
+//            }else{
+//                return 1;
+//            }
+//        }
+//-------------------------------------------------------------------------------------------------
+
+//        10) Julius Caesar protected his confidential information by encrypting it using a cipher. Caesar's cipher shifts each letter by a number of letters. If the shift takes you past the end of the alphabet, just rotate back to the front of the alphabet. In the case of a rotation by 3, w, x, y and z would map to z, a, b and c.
+
+//        By converting the string into a character array you are able to rely on java to find the ASCII number for each letter.
+
+//        String s = "Hello_World!";
+//        int k = 4;
+//
+//        StringBuilder newString = new StringBuilder();
+//        for(char character: s.toCharArray()){
+//            if(character >= 'a' && character <= 'z'){
+//                int alphabetPosition = character - 'a';
+//                int newAlphabetPosition = (alphabetPosition + k) %26;
+//                char newCharacter = (char) ('a' + newAlphabetPosition);
+//                newString.append(newCharacter);
+//            }else if(character >= 'A' && character <= 'Z'){
+//                int alphabetPosition = character - 'A';
+//                int newAlphabetPosition = (alphabetPosition + k) %26;
+//                char newCharacter = (char) ('A' + newAlphabetPosition);
+//                newString.append(newCharacter);
+//            }else{
+//                newString.append(character);
+//            }
+//        }
+//        System.out.println(newString.toString());
+
+//        11)
 
 
 
