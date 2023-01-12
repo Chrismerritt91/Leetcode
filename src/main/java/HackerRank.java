@@ -221,9 +221,53 @@ public class HackerRank {
 //        }
 //        System.out.println(newString.toString());
 
-//        11)
+//        11) Given a square grid of characters in the range ascii[a-z], rearrange elements of each row alphabetically, ascending. Determine if the columns are also in ascending alphabetical order, top to bottom. Return YES if they are or NO if they are not.
 
+//        create your own sort method for strings, after sorting add the new strings to an array list before looping over them and comparing characters.
 
+//        public static String sort(String s){
+//            char[] ch = s.toCharArray();
+//            Arrays.sort(ch);
+//            return new String(ch);
+//        }
+//
+//        public static String gridChallenge(List<String> grid) {
+//            // Write your code here
+//            ArrayList<String> gridList = new ArrayList<>();
+//            for(int i = 0; i < grid.size(); i++){
+//                String s = sort(grid.get(i));
+//                gridList.add(s);
+//            }
+//
+//            int size = gridList.get(0).length();
+//            for(int i = 1; i < gridList.size(); i++){
+//                for(int j = 0; j < size; j++){
+//                    if(gridList.get(i-1).charAt(j) > gridList.get(i).charAt(j)){
+//                        return "NO";
+//                    }
+//                }
+//            }
+//            return "YES";
+//        }
+
+//        12)
+        String n = "9875";
+        int k = 4;
+
+        StringBuilder p = new StringBuilder();
+        p.append(n.repeat(k));
+
+        do{
+            int temp = 0;
+            char[] pArray = p.toString().toCharArray();
+
+            for (int i = 0; i < pArray.length; i++) {
+                temp += Integer.parseInt(String.valueOf(pArray[i]));
+            }
+            p = new StringBuilder(String.valueOf(temp));
+
+        }while(p.length() != 1);
+        System.out.println(p);
 
     }
 
