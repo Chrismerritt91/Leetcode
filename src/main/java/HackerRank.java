@@ -4,22 +4,21 @@ public class HackerRank {
 
     public static void main(String[] args) {
 //        hackerrank assessment questions
-        int[] arr = new int[5];
-        arr[0] = 1;
-        arr[1] = 2;
-        arr[2] = 3;
-        arr[3] = 4;
-        arr[4] = 5;
+//        int[] arr = new int[5];
+//        arr[0] = 1;
+//        arr[1] = 2;
+//        arr[2] = 3;
+//        arr[3] = 4;
+//        arr[4] = 5;
 
 //
-//        List<Integer> arr = new ArrayList<>();
-//        arr.add(1);
-//        arr.add(2);
-//        arr.add(3);
-//        arr.add(4);
-//        arr.add(5);
-//        arr.add(6);
-//        arr.add(7);
+        List<Integer> arr = new ArrayList<>();
+        arr.add(2);
+        arr.add(1);
+        arr.add(5);
+        arr.add(3);
+        arr.add(4);
+
 
 //        *****  Setting up a 2d array  *****
 //        int vertexCount = 3;
@@ -250,24 +249,55 @@ public class HackerRank {
 //            return "YES";
 //        }
 
-//        12)
-        String n = "9875";
-        int k = 4;
+//        12) could not find solution for all cases/ some nums exceed data type limits
 
-        StringBuilder p = new StringBuilder();
-        p.append(n.repeat(k));
+//        String n = "9875";
+//        int k = 4;
+//
+//        StringBuilder p = new StringBuilder();
+//        for(int i = 0; i < k; i++){
+//            p.append(n);
+//        }
+//
+//        do{
+//            int temp = 0;
+//            char[] pArray = p.toString().toCharArray();
+//
+//            for (int i = 0; i < pArray.length; i++) {
+//                temp += Integer.parseInt(String.valueOf(pArray[i]));
+//            }
+//            p = new StringBuilder(String.valueOf(temp));
+//
+//        }while(p.length() != 1);
+//        System.out.println(p);
 
-        do{
-            int temp = 0;
-            char[] pArray = p.toString().toCharArray();
+//        13)
 
-            for (int i = 0; i < pArray.length; i++) {
-                temp += Integer.parseInt(String.valueOf(pArray[i]));
+        int swaps = 0;
+        for(int i = arr.size(); i >= 1; i--){
+            if(arr.get(i-1) != i){
+                if((i - 2) >= 0 && arr.get(i-2) == i){
+                    int swap1 = arr.get(i-1);
+                    int swap2 = arr.get(i-2);
+                    arr.set(i-1,swap2);
+                    arr.set(i-2,swap1);
+                    swaps++;
+                }else if((i - 3) >= 0 && arr.get(i-3) == i){
+                    int swap1 = arr.get(i-1);
+                    int swap2 = arr.get(i-2);
+                    int swap3 = arr.get(i-3);
+                    arr.set(i-1,swap3);
+                    arr.set(i-2,swap1);
+                    arr.set(i-3, swap2);
+                    swaps += 2;
+                } else {
+                    System.out.println("Too chaotic");
+                    return;
+                }
             }
-            p = new StringBuilder(String.valueOf(temp));
+        }
+        System.out.println(swaps);
 
-        }while(p.length() != 1);
-        System.out.println(p);
 
     }
 
