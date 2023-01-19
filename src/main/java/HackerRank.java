@@ -203,12 +203,18 @@ public class HackerRank {
 //        int k = 4;
 //
 //        StringBuilder newString = new StringBuilder();
+//        *use string builder to create new string with loop
 //        for(char character: s.toCharArray()){
+//        *Convert string into character array while looping
 //            if(character >= 'a' && character <= 'z'){
 //                int alphabetPosition = character - 'a';
+//        *by subtracting a from the character you get the position of the character in the alphabet
 //                int newAlphabetPosition = (alphabetPosition + k) %26;
+//        * once you apply the change to the position you modulus the number by 26 to catch the number if it goes past 26 when it changes, so 29 would be c
 //                char newCharacter = (char) ('a' + newAlphabetPosition);
+//        *create a new char variable to convert the value back into a character by casting it
 //                newString.append(newCharacter);
+//        * append it back to the string
 //            }else if(character >= 'A' && character <= 'Z'){
 //                int alphabetPosition = character - 'A';
 //                int newAlphabetPosition = (alphabetPosition + k) %26;
@@ -216,6 +222,7 @@ public class HackerRank {
 //                newString.append(newCharacter);
 //            }else{
 //                newString.append(character);
+//        *if the character is not in the alphabet then it is not changed and is appended to the new string
 //            }
 //        }
 //        System.out.println(newString.toString());
@@ -229,27 +236,31 @@ public class HackerRank {
 //            Arrays.sort(ch);
 //            return new String(ch);
 //        }
-//
+//        * sort individual strings
+
 //        public static String gridChallenge(List<String> grid) {
-//            // Write your code here
+//
 //            ArrayList<String> gridList = new ArrayList<>();
 //            for(int i = 0; i < grid.size(); i++){
 //                String s = sort(grid.get(i));
 //                gridList.add(s);
+//        *create a new array list and sort each string then add string to array list
 //            }
 //
 //            int size = gridList.get(0).length();
 //            for(int i = 1; i < gridList.size(); i++){
+//        * set the length as a variable, start first loop at index one so we can compare string to previous string so we dont go out of bounds
 //                for(int j = 0; j < size; j++){
 //                    if(gridList.get(i-1).charAt(j) > gridList.get(i).charAt(j)){
 //                        return "NO";
+//        *if the previous string with characters in the same position is greater, then strings are not in order, because the char value is be compared and if the value is higher, then the number is farther along in the alphabet
 //                    }
 //                }
 //            }
 //            return "YES";
 //        }
 
-//        12) could not find solution for all cases/ some nums exceed data type limits
+//        **12) could not find solution for all cases/ some nums exceed data type limits
 
 //        String n = "9875";
 //        int k = 4;
@@ -271,32 +282,47 @@ public class HackerRank {
 //        }while(p.length() != 1);
 //        System.out.println(p);
 
-//        13)
+//        -----------------------------------------------------------------------------------------------
+//        13) It is New Year's Day and people are in line for the Wonderland rollercoaster ride. Each person wears a sticker indicating their initial position in the queue from  to . Any person can bribe the person directly in front of them to swap positions, but they still wear their original sticker. One person can bribe at most two others.
+//
+//Determine the minimum number of bribes that took place to get to a given queue order. Print the number of bribes, or, if anyone has bribed more than two people, print Too chaotic.
 
-        int swaps = 0;
-        for(int i = arr.size(); i >= 1; i--){
-            if(arr.get(i-1) != i){
-                if((i - 2) >= 0 && arr.get(i-2) == i){
-                    int swap1 = arr.get(i-1);
-                    int swap2 = arr.get(i-2);
-                    arr.set(i-1,swap2);
-                    arr.set(i-2,swap1);
-                    swaps++;
-                }else if((i - 3) >= 0 && arr.get(i-3) == i){
-                    int swap1 = arr.get(i-1);
-                    int swap2 = arr.get(i-2);
-                    int swap3 = arr.get(i-3);
-                    arr.set(i-1,swap3);
-                    arr.set(i-2,swap1);
-                    arr.set(i-3, swap2);
-                    swaps += 2;
-                } else {
-                    System.out.println("Too chaotic");
-                    return;
-                }
-            }
-        }
-        System.out.println(swaps);
+//        int swaps = 0;
+//        for(int i = arr.size(); i >= 1; i--){
+//       *start at the end and check as you decrement
+//            if(arr.get(i-1) != i){
+//        *if the number does not equal its position in the array run if else if
+//                if((i - 2) >= 0 && arr.get(i-2) == i){
+//                    int swap1 = arr.get(i-1);
+//                    int swap2 = arr.get(i-2);
+//                    arr.set(i-1,swap2);
+//                    arr.set(i-2,swap1);
+//                    swaps++;
+//        *if the number is one position away then target the values and swap for correct position, swaps++
+//                }else if((i - 3) >= 0 && arr.get(i-3) == i){
+//                    int swap1 = arr.get(i-1);
+//                    int swap2 = arr.get(i-2);
+//                    int swap3 = arr.get(i-3);
+//                    arr.set(i-1,swap3);
+//                    arr.set(i-2,swap1);
+//                    arr.set(i-3, swap2);
+//                    swaps += 2;
+//        *if the number is 2 digits away from position then swap all values in between to proper order, swaps++
+//                } else {
+//                    System.out.println("Too chaotic");
+//                    return;
+//        *if the position is more than 2 positions away then it is too chaotic so break loop or return
+//                }
+//            }
+//        }
+//        System.out.println(swaps);
+//        *once all numbers are in proper position sout how many swaps occured
+
+//        ---------------------------------------------------------------------------------------------
+//        14)
+
+//        n
+
 
 
     }
