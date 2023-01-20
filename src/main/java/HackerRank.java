@@ -41,7 +41,7 @@ public class HackerRank {
 //        arr.get(2).add(9);
 
 
-//        1)
+//        1)Plus Minus/ Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with 6 places after the decimal.
 //
 //        double size = arr.size();
 //        double percentage = 1/size;
@@ -62,7 +62,8 @@ public class HackerRank {
 //        System.out.println(String.format("%.6f",negative));
 //        System.out.println(String.format("%.6f",zero));
 //        ------------------------------------------------------------------------------------------------------
-//        2)
+//        2)Mini-Max Sum/ Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+
 //you can also use collections.min or max to get these values
 
 //        Collections.sort(arr);
@@ -78,7 +79,7 @@ public class HackerRank {
 //        System.out.print(" ");
 //        System.out.print(total - min);
 //        ------------------------------------------------------------------------------------------------------
-//        3)
+//        3) Time Conversion
 //        convert any given time to military time
 //        String s = "04:59:59AM";
 //        String[] stringArr = s.split(":");
@@ -110,7 +111,7 @@ public class HackerRank {
 //            }
 //        }
 //        ------------------------------------------------------------------------------------------------------
-//        5) XOR operator (^) is used to find the unique value.
+//        5) Lonely Integer/ XOR operator (^) is used to find the unique value.
 
 //        int uniqueInt = 0;
 //
@@ -139,7 +140,10 @@ public class HackerRank {
 //        }
 //            System.out.println(uniqueInt);
 //        ------------------------------------------------------------------------------------------------------
-//        6) Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+//        6)Diagonal Difference/ Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+//        1 2 3
+//        4 5 6
+//        9 8 9
 
 //        int primaryDiagonal = 0;
 //        int secondaryDiagonal = 0;
@@ -160,7 +164,7 @@ public class HackerRank {
 //
 //        System.out.println(diagonalDifference);
 //        ------------------------------------------------------------------------------------------------------
-//        7) Given an array of  distinct integers, transform the array into a zig zag sequence by permuting the array elements. A sequence will be called a zig zag sequence if the first  elements in the sequence are in increasing order and the last  elements are in decreasing order, where . You need to find the lexicographically smallest zig zag sequence of the given array.
+//        7) Zig Zag Sequence/ Given an array of  distinct integers, transform the array into a zig zag sequence by permuting the array elements. A sequence will be called a zig zag sequence if the first  elements in the sequence are in increasing order and the last  elements are in decreasing order, where . You need to find the lexicographically smallest zig zag sequence of the given array.
 //
 //    public static void findZigZagSequence(int [] a, int n){
 //        Arrays.sort(a);
@@ -198,7 +202,7 @@ public class HackerRank {
 //                towerBreak.put(i, m);
 //            }
 //       ---------------------------------------------------------------------
-//        9) Two players are playing a game of Tower Breakers! Player  always moves first, and both players always play optimally.The rules of the game are as follows:
+//        9)Tower Breakers/ Two players are playing a game of Tower Breakers! Player  always moves first, and both players always play optimally.The rules of the game are as follows:
 //
 //Initially there are  towers.
 //Each tower is of height m.
@@ -219,7 +223,7 @@ public class HackerRank {
 //        }
 //-------------------------------------------------------------------------------------------------
 
-//        10) Julius Caesar protected his confidential information by encrypting it using a cipher. Caesar's cipher shifts each letter by a number of letters. If the shift takes you past the end of the alphabet, just rotate back to the front of the alphabet. In the case of a rotation by 3, w, x, y and z would map to z, a, b and c.
+//        10)Caesar Cipher/  Julius Caesar protected his confidential information by encrypting it using a cipher. Caesar's cipher shifts each letter by a number of letters. If the shift takes you past the end of the alphabet, just rotate back to the front of the alphabet. In the case of a rotation by 3, w, x, y and z would map to z, a, b and c.
 
 //        By converting the string into a character array you are able to rely on java to find the ASCII number for each letter.
 
@@ -251,7 +255,7 @@ public class HackerRank {
 //        }
 //        System.out.println(newString.toString());
 
-//        11) Given a square grid of characters in the range ascii[a-z], rearrange elements of each row alphabetically, ascending. Determine if the columns are also in ascending alphabetical order, top to bottom. Return YES if they are or NO if they are not.
+//        11)Grid Challenge/  Given a square grid of characters in the range ascii[a-z], rearrange elements of each row alphabetically, ascending. Determine if the columns are also in ascending alphabetical order, top to bottom. Return YES if they are or NO if they are not.
 
 //        create your own sort method for strings, after sorting add the new strings to an array list before looping over them and comparing characters.
 
@@ -283,31 +287,34 @@ public class HackerRank {
 //            }
 //            return "YES";
 //        }
-
+//------------------------------------------------------------------------------------------
 //        **12) could not find solution for all cases/ some nums exceed data type limits
 
 //        String n = "9875";
 //        int k = 4;
 //
-//        StringBuilder p = new StringBuilder();
+//         if(n == "0"){
+//        return 0;
+//    }
+//    StringBuilder p = new StringBuilder();
 //        for(int i = 0; i < k; i++){
 //            p.append(n);
 //        }
 //
 //        do{
-//            int temp = 0;
+//            long temp = 0;
 //            char[] pArray = p.toString().toCharArray();
 //
-//            for (int i = 0; i < pArray.length; i++) {
-//                temp += Integer.parseInt(String.valueOf(pArray[i]));
+//            for (long i = 0; i < pArray.length; i++) {
+//                temp += Long.parseLong(String.valueOf(pArray[(int)i]));
 //            }
 //            p = new StringBuilder(String.valueOf(temp));
 //
 //        }while(p.length() != 1);
-//        System.out.println(p);
+//        return Integer.parseInt(p.toString());
 
 //        -----------------------------------------------------------------------------------------------
-//        13) It is New Year's Day and people are in line for the Wonderland rollercoaster ride. Each person wears a sticker indicating their initial position in the queue from  to . Any person can bribe the person directly in front of them to swap positions, but they still wear their original sticker. One person can bribe at most two others.
+//        13)New Year Chaos/ It is New Year's Day and people are in line for the Wonderland rollercoaster ride. Each person wears a sticker indicating their initial position in the queue from  to . Any person can bribe the person directly in front of them to swap positions, but they still wear their original sticker. One person can bribe at most two others.
 //
 //Determine the minimum number of bribes that took place to get to a given queue order. Print the number of bribes, or, if anyone has bribed more than two people, print Too chaotic.
 
@@ -343,9 +350,23 @@ public class HackerRank {
 //        *once all numbers are in proper position sout how many swaps occured
 
 //        ---------------------------------------------------------------------------------------------
-//        14)
+//        14) Counting Sort 1/ Another sorting method, the counting sort, does not require comparison. Instead, you create an integer array whose index range covers the entire range of values in your array to sort. Each time a value occurs in the original array, you increment the counter at that index. At the end, run through your counting array, printing the value of each non-zero valued index that number of times.
 
-//        n
+
+//        int[] countArr = new int[100];
+//        Arrays.fill(countArr, 0);
+//        for(Integer a: arr){
+//            countArr[a]++;
+////           * while looping through the numbers in the arr array when the number equals an index that value will increment
+//        }
+//        List<Integer> results = new ArrayList<>();
+//        for(int i = 0; i < 100; i++){
+//            results.add(countArr[i]);
+////            * this will convert our array into a list for proper return type
+//        }
+//        return results;
+
+//        15)
 
 
 
