@@ -13,10 +13,12 @@ public class HackerRank {
 
 //
         List<Integer> arr = new ArrayList<>();
+        arr.add(1);
         arr.add(2);
         arr.add(1);
-        arr.add(5);
         arr.add(3);
+        arr.add(4);
+        arr.add(2);
         arr.add(4);
 
 
@@ -116,6 +118,26 @@ public class HackerRank {
 //            uniqueInt ^= arr.get(i);
 //        }
 //        System.out.println(uniqueInt);
+
+//        **------------- Secondary solution to problem 5----------------------------------------------
+
+//        if(arr.size() == 1){
+//            System.out.println(arr.get(0));
+//        }
+//
+//        int uniqueInt = 0;
+//
+//        Collections.sort(arr);
+//        for(int i = 1; i < arr.size()-1; i++) {
+//
+//            if (arr.get(i - 1) < arr.get(i) && arr.get(i) < arr.get(i + 1)) {
+//                uniqueInt = arr.get(i);
+//                break;
+//            }else{
+//                uniqueInt = arr.get(arr.size()-1);
+//            }
+//        }
+//            System.out.println(uniqueInt);
 //        ------------------------------------------------------------------------------------------------------
 //        6) Given a square matrix, calculate the absolute difference between the sums of its diagonals.
 
@@ -166,7 +188,7 @@ public class HackerRank {
 
 //------------------------------------------------------------------------------------------
 
-//        *) When you need toe create multiple users with values you can use a hashmap and a loop to create
+//        *) When you need to create multiple users with values you can use a hashmap and a loop to create
 //        int m = 2;
 //        int n = 2;
 //
@@ -179,18 +201,20 @@ public class HackerRank {
 //        9) Two players are playing a game of Tower Breakers! Player  always moves first, and both players always play optimally.The rules of the game are as follows:
 //
 //Initially there are  towers.
-//Each tower is of height .
+//Each tower is of height m.
 //The players move in alternating turns.
-//In each turn, a player can choose a tower of height  and reduce its height to , where  and  evenly divides .
+//In each turn, a player can choose a tower of height x and reduce its height to y, where 1 <= y <= x  and y evenly divides x.
 //If the current player is unable to make a move, they lose the game.
-//Given the values of  and , determine which player will win. If the first player wins, return . Otherwise, return .
+//Given the values of n and m, determine which player will win. If the first player wins, return 1. Otherwise, return 2.
 
 //        public static int towerBreakers(int n, int m) {
 //            // Write your code here
 //            if(m == 1 || n%2 == 0){
 //                return 2;
+//        *if the number of towers is eve then player 2 will always win, if the height is 1 then player 1 can't do anything and player 2 wins
 //            }else{
 //                return 1;
+//        *all other situations player 1 wins
 //            }
 //        }
 //-------------------------------------------------------------------------------------------------
