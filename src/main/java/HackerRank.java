@@ -366,8 +366,87 @@ public class HackerRank {
 //        }
 //        return results;
 
-//        15)
+//        15) Given pointers to the heads of two sorted linked lists, merge them into a single, sorted linked list. Either head pointer may be null meaning that the corresponding list is empty.
+//        Complete the mergeLists function in the editor below.
+//        mergeLists has the following parameters:
+//        SinglyLinkedListNode pointer headA: a reference to the head of a list
+//        SinglyLinkedListNode pointer headB: a reference to the head of a list
+//        Returns
+//        SinglyLinkedListNode pointer: a reference to the head of the merged list
 
+//        SinglyLinkedListNode testNode = new SinglyLinkedListNode(0);
+//        SinglyLinkedListNode currentNode = testNode;
+//
+//        while(head1 != null && head2 != null){
+//
+//        if(head1.data < head2.data){
+//            currentNode.next = head1;
+//            head1 = head1.next;
+//        }else{
+//            currentNode.next = head2;
+//            head2 = head2.next;
+//        }
+//    * /determines which int is bigger and places that int at the first position, then increments the list that had the larger int to compare next./
+//        currentNode = currentNode.next;
+//    }
+//         if(head1 != null){
+//        currentNode.next = head1;
+//        head1 = head1.next;
+//    }
+//
+//         if(head2 != null){
+//        currentNode.next = head2;
+//        head2 = head2.next;
+//    }
+//      * /this catches if the digit is null so the code does not break/
+//         return testNode.next;
+//----------------------------------------------------------------------------------------------------
+//        16) A queue is an abstract data type that maintains the order in which elements were added to it, allowing the oldest elements to be removed from the front and new elements to be added to the rear. This is called a First-In-First-Out (FIFO) data structure because the first element added to the queue (i.e., the one that has been waiting the longest) is always the first one to be removed.
+//
+//A basic queue has the following operations:
+//
+//Enqueue: add a new element to the end of the queue.
+//Dequeue: remove the element from the front of the queue and return it.
+//In this challenge, you must first implement a queue using two stacks. Then process q queries, where each query is one of the following 3 types:
+//
+//1 x: Enqueue element x into the end of the queue.
+//2: Dequeue the element at the front of the queue.
+//3: Print the element at the front of the queue.
+
+//        Scanner scanner = new Scanner(System.in);
+//        int q = scanner.nextInt();
+//
+//        ArrayList<Integer> input = new ArrayList<>();
+//        do{
+//            int inputNum = scanner.nextInt();
+//            if(inputNum == 1){
+//                continue;
+//            }else if(inputNum != 2 && inputNum != 3){
+//                input.add(inputNum);
+//            }else if(inputNum == 2){
+//                input.remove(0);
+//            }else if(inputNum == 3){
+//                System.out.println(input.get(0));
+//            }
+//            q--;
+//        }while(q > 0);
+//        -------------------------------------------------------------------------------------------
+//        17)
+//        String s = "{[()]}";
+//
+//        char[] brackets = s.toCharArray();
+//        if(brackets[brackets.length-1] - brackets[0] < 5 && brackets[0] < brackets[brackets.length-1]){
+//            for(int i = 1, j = brackets.length - 2; i < j; i++, j--){
+//                if(brackets[j] - brackets[i] < 5 && brackets[i] < brackets[j]){
+//                    return "YES";
+//                }else{
+//                    return "NO";
+//                }
+//            }
+//        }else{
+//            return "NO";
+//        }
+//        System.out.println(Arrays.toString(brackets));
 
 
     }
