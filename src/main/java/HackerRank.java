@@ -365,8 +365,9 @@ public class HackerRank {
 ////            * this will convert our array into a list for proper return type
 //        }
 //        return results;
+//---------------------------------------------------------------------------------------------
 
-//        15) Given pointers to the heads of two sorted linked lists, merge them into a single, sorted linked list. Either head pointer may be null meaning that the corresponding list is empty.
+//        15) Merge 2 sorted linked lists/ Given pointers to the heads of two sorted linked lists, merge them into a single, sorted linked list. Either head pointer may be null meaning that the corresponding list is empty.
 //        Complete the mergeLists function in the editor below.
 //        mergeLists has the following parameters:
 //        SinglyLinkedListNode pointer headA: a reference to the head of a list
@@ -401,7 +402,7 @@ public class HackerRank {
 //      * /this catches if the digit is null so the code does not break/
 //         return testNode.next;
 //----------------------------------------------------------------------------------------------------
-//        16) A queue is an abstract data type that maintains the order in which elements were added to it, allowing the oldest elements to be removed from the front and new elements to be added to the rear. This is called a First-In-First-Out (FIFO) data structure because the first element added to the queue (i.e., the one that has been waiting the longest) is always the first one to be removed.
+//        16) Queue using 2 stacks/ A queue is an abstract data type that maintains the order in which elements were added to it, allowing the oldest elements to be removed from the front and new elements to be added to the rear. This is called a First-In-First-Out (FIFO) data structure because the first element added to the queue (i.e., the one that has been waiting the longest) is always the first one to be removed.
 //
 //A basic queue has the following operations:
 //
@@ -431,23 +432,88 @@ public class HackerRank {
 //            q--;
 //        }while(q > 0);
 //        -------------------------------------------------------------------------------------------
-//        17)
-//        String s = "{[()]}";
+//        17) Balanced Brackets/ A bracket is considered to be any one of the following characters: (, ), {, }, [, or ].
 //
-//        char[] brackets = s.toCharArray();
-//        if(brackets[brackets.length-1] - brackets[0] < 5 && brackets[0] < brackets[brackets.length-1]){
-//            for(int i = 1, j = brackets.length - 2; i < j; i++, j--){
-//                if(brackets[j] - brackets[i] < 5 && brackets[i] < brackets[j]){
-//                    return "YES";
+//Two brackets are considered to be a matched pair if the an opening bracket (i.e., (, [, or {) occurs to the left of a closing bracket (i.e., ), ], or }) of the exact same type. There are three types of matched pairs of brackets: [], {}, and ().
+//
+//A matching pair of brackets is not balanced if the set of brackets it encloses are not matched. For example, {[(])} is not balanced because the contents in between { and } are not balanced. The pair of square brackets encloses a single, unbalanced opening bracket, (, and the pair of parentheses encloses a single, unbalanced closing square bracket, ].
+//
+//By this logic, we say a sequence of brackets is balanced if the following conditions are met:
+//
+//It contains no unmatched brackets.
+//The subset of brackets enclosed within the confines of a matched pair of brackets is also a matched pair of brackets.
+//Given n strings of brackets, determine whether each sequence of brackets is balanced. If a string is balanced, return YES. Otherwise, return NO.
+
+//        String s = "{(([])[])[]}";
+//
+//        Stack<Character> stack = new Stack<>();
+//
+//        for(int i = 0; i < s.length(); i++){
+//            if(s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '['){
+//                stack.push(s.charAt(i));
+////                * use push to add elements to the stack in order of occurence
+//            }else{
+//                if(stack.isEmpty()){
+//                    System.out.println("NO");
+////                    * this is to catch if any end braces have occurred first
 //                }else{
-//                    return "NO";
+//                    char popVal = stack.pop();
+//                    if(s.charAt(i) == ')' && popVal !='('){
+//                        System.out.println("NO");
+//                    }else if(s.charAt(i) == '}' && popVal !='{'){
+//                        System.out.println("NO");
+//                    }else if(s.charAt(i) == ']' && popVal !='['){
+//                        System.out.println("NO");
+//                    }
+////                    * then you take the value of the most recent opening brace and compare it to closing brace, if they do not make a set then you return no
 //                }
 //            }
-//        }else{
-//            return "NO";
 //        }
-//        System.out.println(Arrays.toString(brackets));
+//
+//        if(stack.isEmpty()){
+//            System.out.println("YES");
+//        }else{
+//            System.out.println("NO");
+//        }
+//        * if all were matching sets then the stack should be empty, if the stack isnt empty then the brackets were not balanced
 
+//--------------------------------------------------------------------------------------------------
+//        18) Simple Text Editor
+        System.out.println("How many test cases?");
+        Scanner scanner = new Scanner(System.in);
+        int q = scanner.nextInt();
+        String ghost = scanner.nextLine();
+
+        Stack<String> qList = new Stack<>();
+        StringBuffer S = new StringBuffer();
+
+        for(int i = 0; i < q; i++) {
+            int c = scanner.nextInt();
+            if (c == 1) {
+                String newStr = scanner.next();
+                qList.push(c + " " + newStr);
+                S.append(newStr);
+            } else if (c == 2) {
+                int num = scanner.nextInt();
+                S.delete(S.length() - (num), S.length());
+                qList.push(String.valueOf(c + " " + num));
+            } else if (c == 3) {
+                int num2 = scanner.nextInt()-1;
+                System.out.println(S.charAt(num2));
+            } else if(c == 4){
+                String popVal = qList.pop();
+                if(popVal.charAt(0) == '1'){
+                    int subNum = popVal.length()-2;
+                    S.delete(S.length() - (subNum), S.length());
+                }else{
+
+//                    S.append(newStr);
+                }
+            }
+        }
+
+//        System.out.println(S.toString().replaceAll("\s", ""));
+        System.out.println(qList);
 
     }
 
