@@ -64,11 +64,9 @@ public class HackerRank {
 //        ------------------------------------------------------------------------------------------------------
 //        2)Mini-Max Sum/ Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
 
-//you can also use collections.min or max to get these values
 
-//        Collections.sort(arr);
-//        long max = arr.get(0);
-//        long min = arr.get(arr.size() - 1);
+//        long max = Collections.max(arr);
+//        long min = Collections.min(arr);
 //        long total = 0;
 //
 //        for(int i = 0; i < arr.size(); i++){
@@ -254,6 +252,7 @@ public class HackerRank {
 //            }
 //        }
 //        System.out.println(newString.toString());
+//----------------------------------------------------------------------------------------------
 
 //        11)Grid Challenge/  Given a square grid of characters in the range ascii[a-z], rearrange elements of each row alphabetically, ascending. Determine if the columns are also in ascending alphabetical order, top to bottom. Return YES if they are or NO if they are not.
 
@@ -478,42 +477,130 @@ public class HackerRank {
 //        * if all were matching sets then the stack should be empty, if the stack isnt empty then the brackets were not balanced
 
 //--------------------------------------------------------------------------------------------------
-//        18) Simple Text Editor
-        System.out.println("How many test cases?");
-        Scanner scanner = new Scanner(System.in);
-        int q = scanner.nextInt();
-        String ghost = scanner.nextLine();
-
-        Stack<String> qList = new Stack<>();
-        StringBuffer S = new StringBuffer();
-
-        for(int i = 0; i < q; i++) {
-            int c = scanner.nextInt();
-            if (c == 1) {
-                String newStr = scanner.next();
-                qList.push(c + " " + newStr);
-                S.append(newStr);
-            } else if (c == 2) {
-                int num = scanner.nextInt();
-                S.delete(S.length() - (num), S.length());
-                qList.push(String.valueOf(c + " " + num));
-            } else if (c == 3) {
-                int num2 = scanner.nextInt()-1;
-                System.out.println(S.charAt(num2));
-            } else if(c == 4){
-                String popVal = qList.pop();
-                if(popVal.charAt(0) == '1'){
-                    int subNum = popVal.length()-2;
-                    S.delete(S.length() - (subNum), S.length());
-                }else{
-
-//                    S.append(newStr);
-                }
-            }
-        }
-
+//        18) Simple Text Editor/ Come back to finish, 4 is incomplete
+//        System.out.println("How many test cases?");
+//        Scanner scanner = new Scanner(System.in);
+//        int q = scanner.nextInt();
+//        String ghost = scanner.nextLine();
+//
+//        Stack<String> qList = new Stack<>();
+//        StringBuffer S = new StringBuffer();
+//
+//        for(int i = 0; i < q; i++) {
+//            int c = scanner.nextInt();
+//            if (c == 1) {
+//                String newStr = scanner.next();
+//                qList.push(c + " " + newStr);
+//                S.append(newStr);
+//            } else if (c == 2) {
+//                int num = scanner.nextInt();
+//                S.delete(S.length() - (num), S.length());
+//                qList.push(c + " " + num);
+//            } else if (c == 3) {
+//                int num2 = scanner.nextInt()-1;
+//                System.out.println(S.charAt(num2));
+//            } else if(c == 4){
+//                String popVal = qList.pop();
+//                if(popVal.charAt(0) == '1'){
+//                    int subNum = popVal.length()-2;
+//                    S.delete(S.length() - (subNum), S.length());
+//                } else{
+//                    String newStr;
+//                    for(int j = qList.size()-1; j>0; j--){
+//                        if(qList.get(i).charAt(0) == '1'){
+//                            newStr = qList.get(i).trim().substring(1);
+//                            String newSub = newStr.substring(0, newStr.length()-(popVal.trim().charAt(1)));
+//                            S.append(newSub);
+//                            break;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//
 //        System.out.println(S.toString().replaceAll("\s", ""));
-        System.out.println(qList);
+//        System.out.println(qList);
+
+//        -----------------------------------------------------------------------------------
+
+//        19) Sparse Arrays/ There is a collection of input strings and a collection of query strings. For each query string, determine how many times it occurs in the list of input strings. Return an array of the results.
+//        Complete the function matchingStrings in the editor below. The function must return an array of integers representing the frequency of occurrence of each query string in strings.
+//
+//        matchingStrings has the following parameters:
+//
+//        string strings[n] - an array of strings to search
+//        string queries[q] - an array of query strings
+//        Returns
+//
+//        int[q]: an array of results for each query
+
+//        int arrayCount = queries.size();
+//        int[] results = new int[arrayCount];
+//        Arrays.fill(results, 0);
+//        int index = 0;
+//        for(String query: queries){
+//            for(String string: strings){
+//                if(string.equals(query)){
+//                    results[index]++;
+//                }
+//            }
+//            index++;
+//        }
+//        ArrayList<Integer> resultList = new ArrayList<>();
+//        for(int i=0; i < results.length; i++){
+//            resultList.add(results[i]);
+//        }
+//        return resultList;
+
+//        create an int array with a length matching the length of the queries list, set all values to zero with fill(), then loop through queries with a nested loop going through the string list, create an index variable, if the string matches the query then increment the count on results at the current index, once the list of strings is looped increment index variable and go to the next query, transfer array to arraylist and return arraylist.
+
+//        ----------------------------------------------------------------------------------------
+
+//        20) Flipping bits/ Function Description
+//
+//Complete the flippingBits function in the editor below.
+//
+//flippingBits has the following parameter(s):
+//
+//int n: an integer
+//Returns
+//
+//int: the unsigned decimal integer result
+//Input Format
+//
+//The first line of the input contains q, the number of queries.
+//Each of the next q lines contain an integer, n, to process.
+
+//        long n = 1;
+//
+//        String binaryString = Long.toBinaryString(n);
+//        binaryString = String.format("%32s", binaryString).replaceAll(" ", "0");
+//        System.out.println(binaryString);
+//
+//        char[] binaryArray = binaryString.toCharArray();
+//        for(int i = 0; i < binaryString.length(); i++){
+//            if(binaryArray[i] == '0'){
+//                binaryArray[i] = '1';
+//            }else if(binaryArray[i] == '1'){
+//                binaryArray[i] = '0';
+//            }
+//        }
+//        StringBuilder newStr = new StringBuilder();
+//        for(char c: binaryArray){
+//            newStr.append(c);
+//        }
+//        String newBinary = newStr.toString();
+//        long result = Long.parseLong(newBinary,2);
+//        System.out.println(result);
+
+//----------------------------------------------------------------------------------------------
+
+//        21)
+
+
+
+
+
 
     }
 
