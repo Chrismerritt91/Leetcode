@@ -213,7 +213,7 @@ public class HackerRank {
 //            // Write your code here
 //            if(m == 1 || n%2 == 0){
 //                return 2;
-//        *if the number of towers is eve then player 2 will always win, if the height is 1 then player 1 can't do anything and player 2 wins
+//        *if the number of towers is even then player 2 will always win, if the height is 1 then player 1 can't do anything and player 2 wins
 //            }else{
 //                return 1;
 //        *all other situations player 1 wins
@@ -595,7 +595,63 @@ public class HackerRank {
 
 //----------------------------------------------------------------------------------------------
 
-//        21)
+//        21) Pangrams/ Function Description
+//
+//Complete the function pangrams in the editor below. It should return the string pangram if the input string is a pangram. Otherwise, it should return not pangram.
+//pangrams has the following parameter(s):
+//string s: a string to test
+//Returns
+//string: either pangram or not pangram
+//Input Format
+//A single line with string s.
+
+//        if(s.length() < 26){
+//            return "not pangram";
+//        }
+//        s = s.toLowerCase();
+//        String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+//        for(String a: alphabet){
+//            if(!s.contains(a)){
+//                return "not pangram";
+//            }
+//        }
+//        return "pangram";
+
+//        -----------------------------------------------------------------------------------------
+
+//        22) Permuting 2 arrays/ Function Description
+//
+//Complete the twoArrays function in the editor below. It should return a string, either YES or NO.
+//twoArrays has the following parameter(s):
+//int k: an integer
+//int A[n]: an array of integers
+//int B[n]: an array of integers
+//Returns
+//- string: either YES or NO
+//Input Format
+//The first line contains an integer q, the number of queries.
+//The next q sets of 3 lines are as follows:
+//The first line contains two space-separated integers n and k, the size of both arrays A and B, and the relation variable.
+//The second line contains n space-separated integers A[i].
+//The third line contains n space-separated integers B[i].
+
+//        Collections.sort(A);
+//        Collections.sort(B);
+//        Collections.reverse(B);
+//        if(A.size() != B.size()){
+//            return "NO";
+//        }
+//
+//        for(int i = 0; i < A.size(); i++){
+//            if(A.get(i) + B.get(i) < k){
+//                return "NO";
+//            }
+//        }
+//        return "YES";
+
+//------------------------------------------------------------------------------------------
+
+//        23)
 
 
 
