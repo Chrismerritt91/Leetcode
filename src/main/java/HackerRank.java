@@ -13,13 +13,15 @@ public class HackerRank {
 
 //
         List<Integer> arr = new ArrayList<>();
-        arr.add(1);
-        arr.add(2);
-        arr.add(1);
-        arr.add(3);
-        arr.add(4);
-        arr.add(2);
-        arr.add(4);
+        arr.add(10);
+        arr.add(20);
+        arr.add(20);
+        arr.add(10);
+        arr.add(10);
+        arr.add(30);
+        arr.add(50);
+        arr.add(10);
+        arr.add(20);
 
 
 //        *****  Setting up a 2d array  *****
@@ -651,7 +653,98 @@ public class HackerRank {
 
 //------------------------------------------------------------------------------------------
 
-//        23)
+//        23) Subarray Division 1/Function Description
+//Complete the birthday function in the editor below.
+//birthday has the following parameter(s):
+//int s[n]: the numbers on each of the squares of chocolate
+//int d: Ron's birth day
+//int m: Ron's birth month
+//Returns
+//int: the number of ways the bar can be divided
+//Input Format
+//The first line contains an integer n, the number of squares in the chocolate bar.
+//The second line contains n space-separated integers s[i], the numbers on the chocolate squares where 0 <= i < n.
+//The third line contains two space-separated integers, d and m, Ron's birth day and his birth month.
+
+//        if(s.size() < m){
+//            return 0;
+//        }
+//
+//        int results = 0;
+//
+//        for(int i = 0; i < s.size(); i++){
+//            if((i+m) <= s.size()){
+//                int total = 0;
+//                List<Integer> sub = new ArrayList<>();
+//                sub = s.subList(i, (i+m));
+//                for(int j = 0; j < sub.size(); j++){
+//                    total += sub.get(j);
+//                }
+//                if(total == d){
+//                    results++;
+//                }
+//            }
+//        }
+//        return results;
+
+//        ----------------------------------------------------------------------------------------
+
+//        24) XOR String 2/ Given two strings consisting of digits 0 and 1 only, find the XOR of the two strings.
+//Debug the given function strings_xor to find the XOR of the two given strings appropriately.
+//Input Format
+//The input consists of two lines. The first line of the input contains the first string, s, and the second line contains the second string, t.
+//        Print the string obtained by the XOR of the two input strings in a single line.
+
+//        Scanner scanner = new Scanner(System.in);
+//        String s = scanner.nextLine();
+//        String t = scanner.nextLine();
+//
+//        StringBuffer newStr = new StringBuffer();
+//        for(int i = 0; i < s.length(); i++){
+//            int xorVal = Integer.valueOf(s.charAt(i)) ^ Integer.valueOf(t.charAt(i));
+//            newStr.append(xorVal);
+//        }
+//
+//        String xorStr = newStr.toString();
+//
+//        System.out.println(xorStr);
+
+//        * answer was correct in proper type according to the description, hackerrank results with wrong answer/ resubmit later to test again
+
+//        ----------------------------------------------------------------------------------------
+
+//        25)Sales by March/ There is a large pile of socks that must be paired by color. Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are.
+//        Function Description
+//        sockMerchant has the following parameter(s):
+//        int n: the number of socks in the pile
+//        int ar[n]: the colors of each sock
+//        Returns
+//        int: the number of pairs
+
+//        int n = 9;
+//
+//        Collections.sort(arr);
+//        int results = 0;
+//        int count = 0;
+//
+//        for (int i = 0; i < arr.size();){
+//            count = 0;
+//            for(int j = 0; j < arr.size();j++){
+//                if(arr.get(i) == arr.get(j)){
+//                    count++;
+//                }
+//            }
+//            results += count/2;
+//            i += count;
+//        }
+//
+//        System.out.println(results);
+
+//        -----------------------------------------------------------------------------------------
+
+//        26) Drawing book/
+
+
 
 
 
