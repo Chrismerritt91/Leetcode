@@ -789,9 +789,27 @@ public class HackerRank {
 
 //        ----------------------------------------------------------------------------------------
 
-//        28)
+//        28) Dynamic Array/ explanation confusing look up by name
 
-
+//        List<List<Integer>> arr = new ArrayList<>(n);
+//        for(int i = 0; i < n; i++){
+//            arr.add(new ArrayList<>());
+//        }
+//        int lastAnswer = 0;
+//        List<Integer> results = new ArrayList<>();
+//
+//        for(int i = 0; i < queries.size(); i++){
+//            List<Integer> q = queries.get(i);
+//
+//            if(q.get(0) == 1){
+//                arr.get((q.get(1)^lastAnswer)%n).add(q.get(2));
+//            }else{
+//                List<Integer> seq = arr.get((q.get(1)^lastAnswer)%n);
+//                lastAnswer = seq.get(q.get(2) % seq.size());
+//                results.add(lastAnswer);
+//            }
+//        }
+//        return results;
 
 
 
