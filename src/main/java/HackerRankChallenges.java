@@ -1,8 +1,8 @@
 import java.util.*;
 
-public class HackerRank {
+public class HackerRankChallenges {
 
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //        hackerrank assessment questions
 //        int[] arr = new int[5];
 //        arr[0] = 1;
@@ -12,16 +12,16 @@ public class HackerRank {
 //        arr[4] = 5;
 
 //
-        List<Integer> arr = new ArrayList<>();
-        arr.add(10);
-        arr.add(20);
-        arr.add(20);
-        arr.add(10);
-        arr.add(10);
-        arr.add(30);
-        arr.add(50);
-        arr.add(10);
-        arr.add(20);
+//        List<Integer> arr = new ArrayList<>();
+//        arr.add(10);
+//        arr.add(20);
+//        arr.add(20);
+//        arr.add(10);
+//        arr.add(10);
+//        arr.add(30);
+//        arr.add(50);
+//        arr.add(10);
+//        arr.add(20);
 
 
 //        *****  Setting up a 2d array  *****
@@ -813,7 +813,7 @@ public class HackerRank {
 
 
 
-    }
+//    }
 
     }
 
